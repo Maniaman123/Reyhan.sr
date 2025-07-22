@@ -1,0 +1,305 @@
+/* Import Google Fonts untuk tipografi yang menarik */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    --primary-text: #222;
+    --secondary-text: #555;
+    --background-light: #F8F8F8;
+    --background-dark: #1A1A1A;
+    --border-color: #DDD;
+    --accent-color: #000; /* Hitam pekat untuk aksen */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--primary-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--background-dark);
+    color: var(--background-light);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+section {
+    background-color: #FFF;
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Bagian Tentang Saya */
+#about .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 0 8px #eee;
+    filter: grayscale(100%); /* Efek hitam putih pada gambar */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    filter: grayscale(0%); /* Warna muncul saat di-hover */
+    transform: scale(1.05);
+}
+
+#about p {
+    font-size: 1.1em;
+    color: var(--secondary-text);
+    max-width: 700px;
+}
+
+/* Bagian Keahlian */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skills-grid span {
+    background-color: var(--background-dark);
+    color: var(--background-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-grid span:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Bagian Portofolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.project {
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    background-color: var(--background-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.project a {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--background-light);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project a:hover {
+    background-color: var(--primary-text);
+    transform: scale(1.05);
+}
+
+/* Bagian Kontak */
+#contact {
+    text-align: center;
+}
+
+.contact-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    background-color: var(--accent-color);
+    color: var(--background-light);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-links a:hover {
+    background-color: var(--primary-text);
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--background-dark);
+    color: var(--secondary-text);
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animasi Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    #about .content {
+        flex-direction: column;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contact-links a {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header {
+        padding: 40px 15px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .skills-grid span {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
